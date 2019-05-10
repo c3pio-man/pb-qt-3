@@ -1,0 +1,7 @@
+[submodule "SDK_6.3.0"]
+	path = SDK_6.3.0
+	url = https://github.com/c3pio-man/SDK_6.3.0.git
+	branch = 5.19
+[submodule "qml_test"]
+	path = qml_test
+	url = https://github.com/c3pio-man/qml_test.git
