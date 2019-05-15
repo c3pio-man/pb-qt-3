@@ -1,26 +1,61 @@
 How to build example code for ARM.
 
-1. Get cross-compiller and example sources
+1. Build processed on debian stretch linux; if you use other OS or linux distributive - install it as virtual machine or chroot.
 
-git clone --recurse-submodules https://github.com/c3pio-man/pb-qt-3
+1a. Setup build environment on Ubuntu 18.04
 
-2. Configure build directory
+sudo apt install debootstrap schroot
+sudo  debootstrap stretch debian-stretch
 
+Detect yor login
+id -u -n
+and your primary group
+id -g -n
+
+Place to /etc/schroot/schroot.conf file section
+
+[debian-stretch]
+directory=/absolute/path/to/debian-stretch-directory
+groups=_your_primary_group,root
+description=debian-stretch
+users=_your_login,root
+type=directory
+
+Install software into chrooted environment:
+sudo schroot -c debian-stretch -d / -p
+apt update
+apt install g++ libfreetype6-dev libtag1-dev libjsoncpp-dev libgtk2.0-dev libcurl4-openssl-dev libjson-c-dev strace xterm patchelf mc git libjpeg-dev libjpeg62
+
+Create directory for buld
+mkdir /BUILD
+chown _your_login:_your_primary_group  /BUILD/
+
+2. Get cross-compiller and example sources
+
+Enter to chroot as ordinary user
+
+schroot -c debian-stretch -d /BUILD -p
+
+Fetch SDK and example sources
+
+git clone --recurse-submodules -b 5.19 https://github.com/c3pio-man/pb-qt-3
+
+2a. Configure build directory
+
+cd pb-qt-3
 Run configuration scripts
 
 ./env_set.sh
 ./SDK_6.3.0/SDK-A13/bin/update_path.sh 
  
-3. Cross-compile example code for ARM:
+3a. Cross-compile example code for ARM:
 
 cd build/qml_test 
 ./makearm.sh
 
 Build result must be found in output-arm directory. Copy test application output-arm/qml_test to applications/qml_test.app on device and run it as PB application
 
-4. Build example code for PC:
-You need install some libraries:
-apt install g++ libfreetype6-dev libtag1-dev libjsoncpp-dev libgtk2.0-dev libcurl4-openssl-dev libjson-c-dev strace xterm patchelf mc
+3b. Build example code for PC:
 
 cd build/qml_test
 ./makepc.SH
