@@ -27,7 +27,7 @@ Uncomment in file /etc/schroot/default/fstab :
 Install software into chrooted environment:
 sudo schroot -c debian-stretch -d / -p
 apt update
-apt install g++ libfreetype6-dev libtag1-dev libjsoncpp-dev libgtk2.0-dev libcurl4-openssl-dev libjson-c-dev strace xterm patchelf mc git libjpeg-dev libjpeg62
+apt install g++ libfreetype6-dev libtag1-dev libjsoncpp-dev libgtk2.0-dev libcurl4-openssl-dev libjson-c-dev strace xterm patchelf mc git libjpeg-dev libjpeg62 strace
 
 Create directory for buld
 mkdir /BUILD
@@ -42,6 +42,9 @@ schroot -c debian-stretch -d /BUILD -p
 Fetch SDK and example sources
 
 git clone --recurse-submodules -b 5.19 https://github.com/c3pio-man/pb-qt-3
+(cd SDK_6.3.0/ && git checkout 5.19)
+(cd build/qml_test/ && git checkout master)
+(cd build/browser-minimal && git checkout master)
 
 2a. Configure build directory
 
@@ -78,5 +81,10 @@ cd build/browser-minimal
 and for PC:
 cd build/browser-minimal
 ./makepc.SH
+
+
+5. To debug, pc-wrapper.sh can use with parameter -s:
+
+../../pc-wrapper.sh -s output-linux/qml_test
 
 
