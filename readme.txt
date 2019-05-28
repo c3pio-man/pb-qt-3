@@ -27,7 +27,7 @@ Uncomment in file /etc/schroot/default/fstab :
 Install software into chrooted environment:
 sudo schroot -c debian-stretch -d / -p
 apt update
-apt install g++ libfreetype6-dev libtag1-dev libjsoncpp-dev libgtk2.0-dev libcurl4-openssl-dev libjson-c-dev strace xterm patchelf mc git libjpeg-dev libjpeg62 strace
+apt install g++ libfreetype6-dev libtag1-dev libjsoncpp-dev libgtk2.0-dev libcurl4-openssl-dev libjson-c-dev strace xterm patchelf mc git libjpeg-dev libjpeg62 strace libdbus-1-dev libnss3-dev
 
 Create directory for buld
 mkdir /BUILD
