@@ -1,0 +1,26 @@
+﻿SV: Svenska
+äöå:;!?"()
+`1234567890
+qwertyuio
+asdfghjkl
+zxcvbnmp'
+ =+-~ .,*/ 
+ÄÖÅ:;!?"()
+`1234567890
+QWERTYUIO
+ASDFGHJKL
+ZXCVBNMP'
+ =+-~ .,*/ 
+--
+1 2 3 4 5 6 7 8 9 0 bs
+q w e r t y u i o p lg
+a s d f g h j k l å ö
+z x c v b n m ä , . @
+sh : ; sp:4   ? / ok:2
+--
+! - # $ % ^ & * ( ) bs
+Q W E R T Y U I O P lg
+A S D F G H J K L Å Ö 
+Z X C V B N M Ä " _ =
+sh < > sp:4   ' \ ok:2
+--
