@@ -21,6 +21,9 @@ description=debian-stretch
 users=_your_login,root
 type=directory
 
+Uncomment in file /etc/schroot/default/fstab :
+/dev/shm       /dev/shm        none    rw,bind         0       0
+
 Install software into chrooted environment:
 sudo schroot -c debian-stretch -d / -p
 apt update
@@ -65,3 +68,15 @@ Build result must be found in output-linux directory.
 Run output-linux/qml_test with pc-wrapper.sh:
 
 ../../pc-wrapper.sh output-linux/qml_test
+
+
+4. Cross-compite browser-minimal for ARM (like qml_test):
+
+cd build/browser-minimal
+./nightbuild.sh
+
+and for PC:
+cd build/browser-minimal
+./makepc.SH
+
+
