@@ -2,6 +2,9 @@
 	path = SDK_6.3.0
 	url = https://github.com/c3pio-man/SDK_6.3.0.git
 	branch = 5.19
-[submodule "qml_test"]
-	path = qml_test
-	url = https://github.com/c3pio-man/qml_test.git
+[submodule "build/qml_test"]
+	path = build/qml_test
+	url = https://github.com/c3pio-man/qml_test
+[submodule "build/browser-minimal"]
+	path = build/browser-minimal
+	url = https://github.com/c3pio-man/browser-minimal.git
