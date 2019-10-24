@@ -42,11 +42,11 @@ schroot -c debian-stretch -d /BUILD -p
 Fetch SDK and example sources
 
 git clone --recurse-submodules -b 6.0 https://github.com/c3pio-man/pb-qt-3
-./download.sh
+cd pb-qt-3
+../download.sh
 
 2a. Configure build directory
 
-cd pb-qt-3
 Run configuration scripts
 
 ./env_set.sh
