@@ -1,8 +1,8 @@
 #!/bin/bash
 if [ $(basename "$0") = "env_set.sh" ]; then sed -e "s+^BUILDROOT=..*+BUILDROOT="$(realpath "$(dirname "$0")")"+" -i $0; fi
 BUILDROOT=/usr/local/TEST_BUILD/bp-qt-3
-SDK_SELECTED=SDK_6.3.0/SDK-A13 # A13-based devices (626, 627, 641, 840)
-#SDK_SELECTED=SDK_6.3.0/SDK-B288 # B288-based (632, 740)
+#SDK_SELECTED=SDK_6.3.0/SDK-A13 # A13-based devices (626, 627, 641, 840)
+SDK_SELECTED=SDK_6.3.0/SDK-B288 # B288-based (632, 740)
 #SDK_SELECTED=SDK_6.3.0/SDK-iMX6 # 631
 CMAKE_CXX_COMPILER=${BUILDROOT}/${SDK_SELECTED}/usr/bin/arm-obreey-linux-gnueabi-clang++
 CMAKE_C_COMPILER=${BUILDROOT}/${SDK_SELECTED}/usr/bin/arm-obreey-linux-gnueabi-clang
