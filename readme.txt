@@ -43,7 +43,7 @@ Fetch SDK and example sources
 
 git clone --recurse-submodules -b 6.1 https://github.com/c3pio-man/pb-qt-3
 cd pb-qt-3
-../download.sh
+./download.sh
 
 2a. Configure build directory
 
