@@ -21,7 +21,9 @@ shift
 cp -v ${TOOLCHAIN_PATH}/local/qt5/bin/qt.conf `dirname $exe`
 mkdir -p `dirname $exe`/platforms
 cp -v ${TOOLCHAIN_PATH}/local/qt5/lib/qtplugins/platforms/libqpocketbook2.so `dirname $exe`/platforms
+if ! [ -d system ]; then
 cp -rvf ${rootdir}/system .
+fi
 mkdir -p ~/.QtWebEngineProcess/
 cp -v ${TOOLCHAIN_PATH}//local/qt5/resources/* ~/.QtWebEngineProcess/
 #if [ -z "$strace" ]; then
