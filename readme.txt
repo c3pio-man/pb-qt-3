@@ -41,7 +41,7 @@ schroot -c debian-stretch -d /BUILD -p
 
 Fetch SDK and example sources
 
-git clone --recurse-submodules -b 6.1 https://github.com/c3pio-man/pb-qt-3
+git clone --recurse-submodules -b 6.1.upd1 https://github.com/c3pio-man/pb-qt-3
 cd pb-qt-3
 ./download.sh
 
