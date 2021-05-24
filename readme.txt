@@ -41,10 +41,10 @@ schroot -c debian-stretch -d /BUILD -p
 
 Fetch SDK and example sources
 
-git clone --recurse-submodules -b 5.19 https://github.com/c3pio-man/pb-qt-3
-(cd SDK_6.3.0/ && git checkout 5.19)
-(cd build/qml_test/ && git checkout master)
-(cd build/browser-minimal && git checkout master)
+
+git clone --recurse-submodules -b 6.1.upd0 https://github.com/c3pio-man/pb-qt-3
+cd pb-qt-3
+./download.sh
 
 2a. Configure build directory
 
