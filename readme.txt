@@ -52,7 +52,7 @@ cd pb-qt-3
 Run configuration scripts
 
 ./env_set.sh
-./SDK_6.3.0/SDK-A13/bin/update_path.sh 
+./SDK-6.3.0/SDK-B288/bin/update_path.sh 
  
 3a. Cross-compile example code for ARM:
 
