@@ -20,7 +20,7 @@ shift
 
 cp -v ${TOOLCHAIN_PATH}/local/qt5/bin/qt.conf `dirname $exe`
 mkdir -p `dirname $exe`/platforms
-cp -v ${TOOLCHAIN_PATH}/local/qt5/lib/qtplugins/platforms/libqpocketbook2.so `dirname $exe`/platforms
+#cp -v ${TOOLCHAIN_PATH}/local/qt5/lib/qtplugins/platforms/libqpocketbook2.so `dirname $exe`/platforms
 cp -rvf ${rootdir}/system .
 mkdir -p ~/.QtWebEngineProcess/
 cp -v ${TOOLCHAIN_PATH}//local/qt5/resources/* ~/.QtWebEngineProcess/
