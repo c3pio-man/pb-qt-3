@@ -41,9 +41,10 @@ schroot -c debian-stretch -d /BUILD -p
 
 Fetch SDK and example sources
 
-git clone --recurse-submodules -b 6.3.upd2 https://github.com/c3pio-man/pb-qt-3
-cd pb-qt-3
-./download.sh
+git clone --recurse-submodules -b 5.19 https://github.com/c3pio-man/pb-qt-3
+(cd SDK_6.3.0/ && git checkout 5.19)
+(cd build/qml_test/ && git checkout master)
+(cd build/browser-minimal && git checkout master)
 
 2a. Configure build directory
 
@@ -51,7 +52,7 @@ cd pb-qt-3
 Run configuration scripts
 
 ./env_set.sh
-./SDK_6.3.0/SDK-B288/bin/update_path.sh 
+./SDK_6.3.0/SDK-A13/bin/update_path.sh 
  
 3a. Cross-compile example code for ARM:
 
