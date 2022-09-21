@@ -12,6 +12,7 @@ git clone --recurse-submodules https://github.com/c3pio-man/pb-qt-3
 
 2a. Switch into docker environment
 
+cd pb-qt-3
 ./run-container.sh
 
 This script prepare docker image, generate X authorization cookie and run shell in docker environment; current dir mapped to /BUILD in docker container.
@@ -20,7 +21,6 @@ Next steps must execute in docker.
 
 2b. Download pre-built compiler and libs
 
-cd pb-qt-3
 ./download-6.7.sh
 
 2c. Configure build directory
