@@ -4,50 +4,27 @@ How to build example code for ARM.
 
 1a. Setup build environment on Ubuntu 18.04
 
-sudo apt install debootstrap schroot
-sudo  debootstrap stretch debian-stretch
+sudo apt install docker.io
 
-Detect yor login
-id -u -n
-and your primary group
-id -g -n
+2. Fetch SDK and example sources
 
-Place to /etc/schroot/schroot.conf file section
+git clone --recurse-submodules https://github.com/c3pio-man/pb-qt-3
 
-[debian-stretch]
-directory=/absolute/path/to/debian-stretch-directory
-groups=_your_primary_group,root
-description=debian-stretch
-users=_your_login,root
-type=directory
+2a. Switch into docker environment
 
-Uncomment in file /etc/schroot/default/fstab :
-/dev/shm       /dev/shm        none    rw,bind         0       0
+./run-container.sh
 
-Install software into chrooted environment:
-sudo schroot -c debian-stretch -d / -p
-apt update
-apt install g++ libfreetype6-dev libtag1-dev libjsoncpp-dev libgtk2.0-dev libcurl4-openssl-dev libjson-c-dev strace xterm patchelf mc git libjpeg-dev libjpeg62 strace libdbus-1-dev libnss3-dev
+This script prepare docker image, generate X authorization cookie and run shell in docker environment; current dir mapped to /BUILD in docker container.
 
-Create directory for buld
-mkdir /BUILD
-chown _your_login:_your_primary_group  /BUILD/
+Next steps must execute in docker.
 
-2. Get cross-compiller and example sources
-
-Enter to chroot as ordinary user
-
-schroot -c debian-stretch -d /BUILD -p
-
-Fetch SDK and example sources
-
-git clone --recurse-submodules -b 6.7 https://github.com/c3pio-man/pb-qt-3
-cd pb-qt-3
-./download.sh
-
-2a. Configure build directory
+2b. Download pre-built compiler and libs
 
 cd pb-qt-3
+./download-6.7.sh
+
+2c. Configure build directory
+
 Run configuration scripts
 
 ./env_set.sh
